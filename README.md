@@ -13,10 +13,15 @@
 ### <u>Tâches</u> :
 
 - [&cross;] Intégrer Bootstrap 4 aux template générale de Bootstrap 4
+
 - [&cross;] Trouver un template Bootstrap 4 en adéquation avec le métier du client Finale (Hop hop hop livraison)
+
 - [&cross;] Se familiariser rapidement avec Angular 11.0.8 principe de (router, Guard, Authenticator, Services, Components, Tests, ...)
+
 - [&cross;] Utiliser HttpClient pour faire les requêtes aux url Back du webSite (cause rapidité des requête et sécurisation des requêtes)
+
 - [&cross;] Utiliser Jquery pour plus de rapidité dans le DOM de la page web
+
 - [&cross;] Demander au server si l'utilisateurs en question est autorisé a accéder a cette 
 url pour le savoir il faudra regarder la partie access modifié par le server :
 ``` json
@@ -67,6 +72,8 @@ url pour le savoir il faudra regarder la partie access modifié par le server :
     }
 ```
 - [&cross;] Demander au server les éléments à afficher
+
+- [&cross;] S'occuper de l'UI du site web
 
 ## <u>Back-Office</u> :
 <br>
