@@ -155,23 +155,14 @@
       ),
       'reference' => '56070bebac6e77230ed7d306ad13528e60732871',
     ),
-    'egulias/email-validator' => 
-    array (
-      'pretty_version' => '2.1.25',
-      'version' => '2.1.25.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '0dbf5d78455d4d6a41d186da50adc1122ec066f4',
-    ),
     'friendsofphp/proxy-manager-lts' => 
     array (
-      'pretty_version' => 'v1.0.2',
-      'version' => '1.0.2.0',
+      'pretty_version' => 'v1.0.3',
+      'version' => '1.0.3.0',
       'aliases' => 
       array (
       ),
-      'reference' => '4a66e4e0d3279d3bb3722963b4294331fabe15bc',
+      'reference' => '121af47c9aee9c03031bdeca3fac0540f59aa5c3',
     ),
     'laminas/laminas-code' => 
     array (
@@ -470,24 +461,6 @@
       ),
       'reference' => '1feb619286d819180f7b8bc0dc44f516d9c62647',
     ),
-    'symfony/mailer' => 
-    array (
-      'pretty_version' => 'v5.2.1',
-      'version' => '5.2.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '3f34fa977efca75ad17f1416ecb4605f27dbb75e',
-    ),
-    'symfony/mime' => 
-    array (
-      'pretty_version' => 'v5.2.1',
-      'version' => '5.2.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'de97005aef7426ba008c46ba840fc301df577ada',
-    ),
     'symfony/polyfill-ctype' => 
     array (
       'replaced' => 
@@ -510,15 +483,6 @@
       array (
       ),
       'reference' => '267a9adeb8ecb8071040a740930e077cdfb987af',
-    ),
-    'symfony/polyfill-intl-idn' => 
-    array (
-      'pretty_version' => 'v1.22.0',
-      'version' => '1.22.0.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => '0eb8293dbbcd6ef6bf81404c9ce7d95bcdf34f44',
     ),
     'symfony/polyfill-intl-normalizer' => 
     array (
@@ -643,15 +607,6 @@
       array (
       ),
       'reference' => '40023b8e14e5928b26df6a099cec0bf0c30eb3be',
-    ),
-    'symfony/sendgrid-mailer' => 
-    array (
-      'pretty_version' => 'v5.2.1',
-      'version' => '5.2.1.0',
-      'aliases' => 
-      array (
-      ),
-      'reference' => 'efb5e9438ed2996b9bd4a6d6230ce539687d3168',
     ),
     'symfony/service-contracts' => 
     array (
