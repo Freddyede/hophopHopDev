@@ -200,6 +200,15 @@
       ),
       'reference' => '6ede70583e101030bcace4dcddd648f760ddf642',
     ),
+    'nikic/php-parser' => 
+    array (
+      'pretty_version' => 'v4.10.4',
+      'version' => '4.10.4.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => 'c6d052fc58cb876152f89f532b95a8d7907e7f0e',
+    ),
     'ocramius/package-versions' => 
     array (
       'replaced' => 
@@ -478,6 +487,15 @@
       array (
       ),
       'reference' => '1feb619286d819180f7b8bc0dc44f516d9c62647',
+    ),
+    'symfony/maker-bundle' => 
+    array (
+      'pretty_version' => 'v1.28.0',
+      'version' => '1.28.0.0',
+      'aliases' => 
+      array (
+      ),
+      'reference' => '6f4d27a68c92179c124f5331a27e32d197c9bd59',
     ),
     'symfony/polyfill-ctype' => 
     array (
