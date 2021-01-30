@@ -6,6 +6,9 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 
+/**
+ * @Route("/back")
+*/
 class DevController extends AbstractController
 {
     /**
@@ -15,6 +18,7 @@ class DevController extends AbstractController
     {
         return $this->render('dev/index.html.twig', [
             'controller_name' => 'DevController',
+            'titleDashboard'=> 'developers'
         ]);
     }
 }

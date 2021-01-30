@@ -1983,16 +1983,17 @@
     </service>
     <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap">
       <call method="add">
-        <argument type="service" id=".security.request_matcher.5dJADCx"/>
+        <argument type="service" id=".security.request_matcher.O6AiRvH"/>
         <argument type="collection">
           <argument>ROLE_ADMIN</argument>
         </argument>
         <argument>null</argument>
       </call>
       <call method="add">
-        <argument type="service" id=".security.request_matcher.BBq58zu"/>
+        <argument type="service" id=".security.request_matcher.UmOQah4"/>
         <argument type="collection">
           <argument>ROLE_DEV</argument>
+          <argument>ROLE_ADMIN</argument>
         </argument>
         <argument>null</argument>
       </call>
@@ -2438,11 +2439,11 @@
         <argument key="security.firewall.map.context.main" type="service" id="security.firewall.map.context.main"/>
       </argument>
     </service>
-    <service id=".security.request_matcher.5dJADCx" class="Symfony\Component\HttpFoundation\RequestMatcher">
-      <argument>^/admin</argument>
+    <service id=".security.request_matcher.O6AiRvH" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/back/admin</argument>
     </service>
-    <service id=".security.request_matcher.BBq58zu" class="Symfony\Component\HttpFoundation\RequestMatcher">
-      <argument>^/dev</argument>
+    <service id=".security.request_matcher.UmOQah4" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/back/dev</argument>
     </service>
     <service id="security.command.user_password_encoder" class="Symfony\Bundle\SecurityBundle\Command\UserPasswordEncoderCommand">
       <tag name="console.command" command="security:encode-password"/>

@@ -1,0 +1,39 @@
+<!-- Begin Page Content -->
+<div class="container-fluid">
+    {% include 'components/website/header.html.twig' %}
+    <!-- Content Row -->
+    <div class="row">
+        {% include 'components/website/percent.html.twig' %}
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        {% include 'components/website/area.html.twig' %}
+        {% include 'components/website/pie.html.twig' %}
+    </div>
+    <!-- Content Row -->
+    <div class="row">
+        <!-- Content Column -->
+        <div class="col-lg-6 mb-4">
+            <!-- Project Card Example -->
+            <div class="card shadow mb-4">
+                <div class="card-header py-3">
+                    <h6 class="m-0 font-weight-bold text-primary">Projects</h6>
+                </div>
+                {% include 'components/website/infos.html.twig' %}
+            </div>
+            {% if app.user.roles.roles is same as('ROLE_DEV') %}
+                {% include 'components/website/colors.html.twig' %}
+            {% endif %}
+        </div>
+        <div class="col-lg-6 mb-4">
+        {% if app.user.roles.roles is same as('ROLE_DEV') %}
+            {% include 'components/website/illustrations.html.twig' %}
+            {% include 'components/DEV/approach.html.twig' %}
+            {% include 'components/DEV/error.html.twig' %}
+        {% else %}
+            {% include 'components/website/colors.html.twig' %}
+        {% endif %}
+        </div>
+    </div>
+</div>
+<!-- /.container-fluid -->
