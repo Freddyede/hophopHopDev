@@ -19,5 +19,4 @@ return [
     'dev' => [[], ['_controller' => 'App\\Controller\\DevController::index'], [], [['text', '/back/dev']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
-    'redirection' => [[], ['_controller' => 'App\\Controller\\SecurityController::redirection'], [], [['text', '/redirection']], [], []],
 ];

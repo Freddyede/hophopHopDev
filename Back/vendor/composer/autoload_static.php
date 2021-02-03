@@ -15,8 +15,8 @@ class ComposerStaticInit1cdd2025762b80caa63ce1ebc921c4e1
         'e69f7f6ee287b969198c3c9d6777bd38' => __DIR__ . '/..' . '/symfony/polyfill-intl-normalizer/bootstrap.php',
         '8825ede83f2f289127722d4e842cf7e8' => __DIR__ . '/..' . '/symfony/polyfill-intl-grapheme/bootstrap.php',
         'b6b991a57620e2fb6b2f66f03fe9ddc2' => __DIR__ . '/..' . '/symfony/string/Resources/functions.php',
-        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '7e9bd612cc444b3eed788ebbe46263a0' => __DIR__ . '/..' . '/laminas/laminas-zendframework-bridge/src/autoload.php',
+        'f598d06aa772fa33d905e87be6398fb1' => __DIR__ . '/..' . '/symfony/polyfill-intl-idn/bootstrap.php',
         '2c102faa651ef8ea5874edb585946bce' => __DIR__ . '/..' . '/swiftmailer/swiftmailer/lib/swift_required.php',
     );
 
@@ -72,6 +72,7 @@ class ComposerStaticInit1cdd2025762b80caa63ce1ebc921c4e1
             'Symfony\\Bridge\\Twig\\' => 20,
             'Symfony\\Bridge\\ProxyManager\\' => 28,
             'Symfony\\Bridge\\Doctrine\\' => 24,
+            'Sensio\\Bundle\\FrameworkExtraBundle\\' => 35,
         ),
         'P' => 
         array (
@@ -302,6 +303,10 @@ class ComposerStaticInit1cdd2025762b80caa63ce1ebc921c4e1
         array (
             0 => __DIR__ . '/..' . '/symfony/doctrine-bridge',
         ),
+        'Sensio\\Bundle\\FrameworkExtraBundle\\' => 
+        array (
+            0 => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src',
+        ),
         'Psr\\Log\\' => 
         array (
             0 => __DIR__ . '/..' . '/psr/log/Psr/Log',
@@ -415,7 +420,13 @@ class ComposerStaticInit1cdd2025762b80caa63ce1ebc921c4e1
     );
 
     public static $classMap = array (
+        'App\\Controller\\AdminController' => __DIR__ . '/../..' . '/src/Controller/AdminController.php',
+        'App\\Controller\\DevController' => __DIR__ . '/../..' . '/src/Controller/DevController.php',
+        'App\\Controller\\SecurityController' => __DIR__ . '/../..' . '/src/Controller/SecurityController.php',
+        'App\\Entity\\User' => __DIR__ . '/../..' . '/src/Entity/User.php',
         'App\\Kernel' => __DIR__ . '/../..' . '/src/Kernel.php',
+        'App\\Repository\\UserRepository' => __DIR__ . '/../..' . '/src/Repository/UserRepository.php',
+        'App\\Security\\AppUserLoginAuthenticator' => __DIR__ . '/../..' . '/src/Security/AppUserLoginAuthenticator.php',
         'Attribute' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Attribute.php',
         'Composer\\InstalledVersions' => __DIR__ . '/..' . '/composer/InstalledVersions.php',
         'Doctrine\\Bundle\\DoctrineBundle\\Command\\CreateDatabaseDoctrineCommand' => __DIR__ . '/..' . '/doctrine/doctrine-bundle/Command/CreateDatabaseDoctrineCommand.php',
@@ -2047,6 +2058,36 @@ class ComposerStaticInit1cdd2025762b80caa63ce1ebc921c4e1
         'Psr\\Log\\Test\\DummyTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/DummyTest.php',
         'Psr\\Log\\Test\\LoggerInterfaceTest' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/LoggerInterfaceTest.php',
         'Psr\\Log\\Test\\TestLogger' => __DIR__ . '/..' . '/psr/log/Psr/Log/Test/TestLogger.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Cache' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/Cache.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\ConfigurationAnnotation' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/ConfigurationAnnotation.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\ConfigurationInterface' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/ConfigurationInterface.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Entity' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/Entity.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\IsGranted' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/IsGranted.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Method' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/Method.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\ParamConverter' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/ParamConverter.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Route' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/Route.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Security' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/Security.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Configuration\\Template' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Configuration/Template.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\DependencyInjection\\Compiler\\AddExpressionLanguageProvidersPass' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/DependencyInjection/Compiler/AddExpressionLanguageProvidersPass.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\DependencyInjection\\Compiler\\AddParamConverterPass' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/DependencyInjection/Compiler/AddParamConverterPass.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\DependencyInjection\\Compiler\\OptimizerPass' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/DependencyInjection/Compiler/OptimizerPass.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\DependencyInjection\\Configuration' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/DependencyInjection/Configuration.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\DependencyInjection\\SensioFrameworkExtraExtension' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/DependencyInjection/SensioFrameworkExtraExtension.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\ControllerListener' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/EventListener/ControllerListener.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\HttpCacheListener' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/EventListener/HttpCacheListener.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\IsGrantedListener' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/EventListener/IsGrantedListener.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\ParamConverterListener' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/EventListener/ParamConverterListener.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\SecurityListener' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/EventListener/SecurityListener.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\EventListener\\TemplateListener' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/EventListener/TemplateListener.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ArgumentNameConverter' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Request/ArgumentNameConverter.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DateTimeParamConverter' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Request/ParamConverter/DateTimeParamConverter.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\DoctrineParamConverter' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Request/ParamConverter/DoctrineParamConverter.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\ParamConverterInterface' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Request/ParamConverter/ParamConverterInterface.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Request\\ParamConverter\\ParamConverterManager' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Request/ParamConverter/ParamConverterManager.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Routing\\AnnotatedRouteControllerLoader' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Routing/AnnotatedRouteControllerLoader.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Security\\ExpressionLanguage' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Security/ExpressionLanguage.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\SensioFrameworkExtraBundle' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/SensioFrameworkExtraBundle.php',
+        'Sensio\\Bundle\\FrameworkExtraBundle\\Templating\\TemplateGuesser' => __DIR__ . '/..' . '/sensio/framework-extra-bundle/src/Templating/TemplateGuesser.php',
         'Stringable' => __DIR__ . '/..' . '/symfony/polyfill-php80/Resources/stubs/Stringable.php',
         'Symfony\\Bridge\\Doctrine\\CacheWarmer\\ProxyCacheWarmer' => __DIR__ . '/..' . '/symfony/doctrine-bridge/CacheWarmer/ProxyCacheWarmer.php',
         'Symfony\\Bridge\\Doctrine\\ContainerAwareEventManager' => __DIR__ . '/..' . '/symfony/doctrine-bridge/ContainerAwareEventManager.php',
