@@ -12,11 +12,9 @@
 
 ### <u>Tâches</u> :
 
-- [&cross;] Intégrer Bootstrap 4 aux template générale de Bootstrap 4
+- [&check;] Intégrer Bootstrap 4 aux template générale de Bootstrap 4
 
 - [&cross;] Trouver un template Bootstrap 4 en adéquation avec le métier du client Finale (Hop hop hop livraison)
-
-- [&cross;] Se familiariser rapidement avec Angular 11.0.8 principe de (router, Guard, Authenticator, Services, Components, Tests, ...)
 
 - [&cross;] Utiliser HttpClient pour faire les requêtes aux url Back du webSite (cause rapidité des requête et sécurisation des requêtes)
 
@@ -80,19 +78,17 @@ url pour le savoir il faudra regarder la partie access modifié par le server :
 
 ### <u>Tâches API</u> :
 
-- [&cross;] Créer une API utilisable que par le site web et l'application mobile et pas un autre site tiers
-
-- [&cross;] Gérer les rôles utilisateurs Front via la sécurité intégrer dans Symfony version5.2.1
+- [&cross;] Gérer les rôles utilisateurs Front via la sécurité intégrer dans Symfony version5.2.2
 
 - [&cross;] Retourner aux Front les éléments demandé
 <br>
 
 ### <u>Tâches</u> :
-- [&cross;] Intégrer Bootstrap 4 au fichier `Back/templates/base.admin.html.twig` du projet
+- [&check;] Intégrer Bootstrap 4 au fichier `Back/templates/base.admin.html.twig` du projet
 
-- [&cross;] Créer deux routes :
-    - [&cross;] '/dev' auquelle aura accès le 'ROLE_DEV' seulement Route consacré aux erreurs du site web
-    - [&cross;] '/admin' auquelle aura accès le 'ROLE_DEV' et ROLE_ADMIN' consacré aux contenus du site web
+- [&check;] Créer deux routes :
+    - [&check;] '/dev' auquelle aura accès le 'ROLE_DEV' seulement Route consacré aux erreurs du site web
+    - [&check;] '/admin' auquelle aura accès le 'ROLE_DEV' et ROLE_ADMIN' consacré aux contenus du site web
 
 - [&cross;] Quand ROLE_DEV fait une modif du site web avertir directement le ROLE_ADMIN avant upload du nouveau changement
 <br>
