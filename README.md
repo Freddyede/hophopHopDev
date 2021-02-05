@@ -78,7 +78,7 @@ url pour le savoir il faudra regarder la partie access modifié par le server :
 ## <u>Back-Office</u> :
 <br>
 
-### <u>Tâches Front-Office et API</u> :
+### <u>Tâches API</u> :
 
 - [&cross;] Créer une API utilisable que par le site web et l'application mobile et pas un autre site tiers
 
@@ -87,7 +87,7 @@ url pour le savoir il faudra regarder la partie access modifié par le server :
 - [&cross;] Retourner aux Front les éléments demandé
 <br>
 
-### <u>Tâches Back-Office</u> :
+### <u>Tâches</u> :
 - [&cross;] Intégrer Bootstrap 4 au fichier `Back/templates/base.admin.html.twig` du projet
 
 - [&cross;] Créer deux routes :
@@ -95,3 +95,10 @@ url pour le savoir il faudra regarder la partie access modifié par le server :
     - [&cross;] '/admin' auquelle aura accès le 'ROLE_DEV' et ROLE_ADMIN' consacré aux contenus du site web
 
 - [&cross;] Quand ROLE_DEV fait une modif du site web avertir directement le ROLE_ADMIN avant upload du nouveau changement
+<br>
+
+## <u>Sécurité</u> :
+
+### <u>Tâches</u> :
+
+- [&cross] Trouver un moyen de bloquer l'accès de l'API sauf au site et à l'App Mobile
