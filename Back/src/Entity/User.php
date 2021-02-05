@@ -44,6 +44,11 @@ class User implements UserInterface
      */
     private $tel;
 
+    /**
+     * @ORM\Column(type="text", nullable=true)
+     */
+    private $profil;
+
     public function getId(): ?int
     {
         return $this->id;
@@ -142,6 +147,18 @@ class User implements UserInterface
     public function setTel(string $tel): self
     {
         $this->tel = $tel;
+
+        return $this;
+    }
+
+    public function getProfil(): ?string
+    {
+        return $this->profil;
+    }
+
+    public function setProfil(?string $profil): self
+    {
+        $this->profil = $profil;
 
         return $this;
     }
