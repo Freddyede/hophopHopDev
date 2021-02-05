@@ -101,4 +101,4 @@ url pour le savoir il faudra regarder la partie access modifié par le server :
 
 ### <u>Tâches</u> :
 
-- [&cross] Trouver un moyen de bloquer l'accès de l'API sauf au site et à l'App Mobile
+- [&cross;] Trouver un moyen de bloquer l'accès de l'API sauf au site et à l'App Mobile
