@@ -87,8 +87,8 @@ url pour le savoir il faudra regarder la partie access modifié par le server :
 - [&check;] Intégrer Bootstrap 4 au fichier `Back/templates/base.admin.html.twig` du projet
 
 - [&check;] Créer deux routes :
-    - [&check;] '/dev' auquelle aura accès le 'ROLE_DEV' seulement Route consacré aux erreurs du site web
-    - [&check;] '/admin' auquelle aura accès le 'ROLE_DEV' et ROLE_ADMIN' consacré aux contenus du site web
+    - [&check;] '/dev' auquelle aura accès le 'ROLE_DEV' et ROLE_ADMIN' seulement Route consacré aux erreurs du site web
+    - [&check;] '/admin' auquelle aura accès le 'ROLE_ADMIN' consacré aux contenus du site web
 
 - [&cross;] Quand ROLE_DEV fait une modif du site web avertir directement le ROLE_ADMIN avant upload du nouveau changement
 <br>
