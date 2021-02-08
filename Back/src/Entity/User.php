@@ -55,22 +55,23 @@ class User implements UserInterface
      * @ORM\ManyToMany(targetEntity=Notification::class, mappedBy="senders")
      */
     private $notifications;
-
     /**
-     * @ORM\ManyToMany(targetEntity=Messages::class, mappedBy="receveur")
+     * @ORM\OneToMany(targetEntity=Message::class, mappedBy="senders")
      */
     private $messages;
 
     /**
-     * @ORM\ManyToOne(targetEntity=Messages::class, inversedBy="envoyeur")
+     * @ORM\OneToMany(targetEntity=Message::class, mappedBy="receveur")
      */
-    private $envoyeur;
+    private $receveur;
 
     public function __construct()
     {
         $this->notifications = new ArrayCollection();
         $this->mails = new ArrayCollection();
+        $this->envoyeur = new ArrayCollection();
         $this->messages = new ArrayCollection();
+        $this->receveur = new ArrayCollection();
     }
 
     public function getId(): ?int
@@ -215,31 +216,61 @@ class User implements UserInterface
     }
 
     /**
-     * @return Collection|Messages[]
+     * @return Collection|Message[]
      */
     public function getMessages(): Collection
     {
         return $this->messages;
     }
 
-    public function addMessage(Messages $message): self
+    public function addMessage(Message $message): self
     {
         if (!$this->messages->contains($message)) {
             $this->messages[] = $message;
-            $message->addReceveur($this);
+            $message->setSenders($this);
         }
 
         return $this;
     }
 
-    public function getEnvoyeur(): ?Messages
+    public function removeMessage(Message $message): self
     {
-        return $this->envoyeur;
+        if ($this->messages->removeElement($message)) {
+            // set the owning side to null (unless already changed)
+            if ($message->getSenders() === $this) {
+                $message->setSenders(null);
+            }
+        }
+
+        return $this;
     }
 
-    public function setEnvoyeur(?Messages $envoyeur): self
+    /**
+     * @return Collection|Message[]
+     */
+    public function getReceveur(): Collection
     {
-        $this->envoyeur = $envoyeur;
+        return $this->receveur;
+    }
+
+    public function addReceveur(Message $receveur): self
+    {
+        if (!$this->receveur->contains($receveur)) {
+            $this->receveur[] = $receveur;
+            $receveur->setReceveur($this);
+        }
+
+        return $this;
+    }
+
+    public function removeReceveur(Message $receveur): self
+    {
+        if ($this->receveur->removeElement($receveur)) {
+            // set the owning side to null (unless already changed)
+            if ($receveur->getReceveur() === $this) {
+                $receveur->setReceveur(null);
+            }
+        }
 
         return $this;
     }

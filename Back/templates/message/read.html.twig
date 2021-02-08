@@ -1,0 +1,7 @@
+{% extends 'BASES/base.admin.html.twig' %}
+
+{% block body %}
+    {{ dump(message.senders.email) }}
+    {{ dump(message.contenu) }}
+    {{ dump(message.receveur.email) }}
+{% endblock %}

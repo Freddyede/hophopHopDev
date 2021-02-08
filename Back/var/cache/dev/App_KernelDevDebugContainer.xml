@@ -291,6 +291,13 @@
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\DevController"/>
       </call>
     </service>
+    <service id="App\Controller\MessageController" class="App\Controller\MessageController" public="true" autowire="true" autoconfigure="true">
+      <tag name="controller.service_arguments"/>
+      <tag name="container.service_subscriber"/>
+      <call method="setContainer">
+        <argument type="service" id=".service_locator.5nX7ca3.App\Controller\MessageController"/>
+      </call>
+    </service>
     <service id="App\Controller\SecurityController" class="App\Controller\SecurityController" public="true" autowire="true" autoconfigure="true">
       <tag name="controller.service_arguments"/>
       <tag name="container.service_subscriber"/>
@@ -298,7 +305,7 @@
         <argument type="service" id=".service_locator.5nX7ca3.App\Controller\SecurityController"/>
       </call>
     </service>
-    <service id="App\Repository\MessagesRepository" class="App\Repository\MessagesRepository" autowire="true" autoconfigure="true">
+    <service id="App\Repository\MessageRepository" class="App\Repository\MessageRepository" autowire="true" autoconfigure="true">
       <tag name="doctrine.repository_service"/>
       <argument type="service" id="doctrine"/>
     </service>
@@ -2075,6 +2082,14 @@
     </service>
     <service id="security.access_map" class="Symfony\Component\Security\Http\AccessMap">
       <call method="add">
+        <argument type="service" id=".security.request_matcher.u0bJlsq"/>
+        <argument type="collection">
+          <argument>ROLE_DEV</argument>
+          <argument>ROLE_ADMIN</argument>
+        </argument>
+        <argument>null</argument>
+      </call>
+      <call method="add">
         <argument type="service" id=".security.request_matcher.O6AiRvH"/>
         <argument type="collection">
           <argument>ROLE_ADMIN</argument>
@@ -2586,6 +2601,9 @@
         <argument key="security.firewall.map.context.main" type="service" id="security.firewall.map.context.main"/>
       </argument>
     </service>
+    <service id=".security.request_matcher.u0bJlsq" class="Symfony\Component\HttpFoundation\RequestMatcher">
+      <argument>^/back</argument>
+    </service>
     <service id=".security.request_matcher.O6AiRvH" class="Symfony\Component\HttpFoundation\RequestMatcher">
       <argument>^/back/admin</argument>
     </service>
@@ -2761,7 +2779,7 @@
       <factory class="Doctrine\ORM\EntityManager" method="create"/>
     </service>
     <service id="doctrine.orm.container_repository_factory" class="Doctrine\Bundle\DoctrineBundle\Repository\ContainerRepositoryFactory">
-      <argument type="service" id=".service_locator.bszTnHM"/>
+      <argument type="service" id=".service_locator.epGeCkb"/>
     </service>
     <service id="doctrine.orm.manager_configurator.abstract" class="Doctrine\Bundle\DoctrineBundle\ManagerConfigurator" abstract="true">
       <argument type="collection"/>
@@ -3789,11 +3807,14 @@
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\DevController" class="App\Controller\DevController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\DevController" class="App\Controller\DevController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\DevController" class="App\Controller\DevController" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\MessageController" class="App\Controller\MessageController" autowire="true" abstract="true"/>
+    <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\MessageController" class="App\Controller\MessageController" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Controller\MessageController" class="App\Controller\MessageController" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Symfony\Contracts\Service\ServiceSubscriberInterface.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".instanceof.Symfony\Bundle\FrameworkBundle\Controller\AbstractController.0.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Controller\SecurityController" class="App\Controller\SecurityController" autowire="true" autoconfigure="true" abstract="true"/>
-    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MessagesRepository" class="App\Repository\MessagesRepository" autowire="true" abstract="true"/>
-    <service id=".abstract.instanceof.App\Repository\MessagesRepository" class="App\Repository\MessagesRepository" autowire="true" autoconfigure="true" abstract="true"/>
+    <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\MessageRepository" class="App\Repository\MessageRepository" autowire="true" abstract="true"/>
+    <service id=".abstract.instanceof.App\Repository\MessageRepository" class="App\Repository\MessageRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\NotificationRepository" class="App\Repository\NotificationRepository" autowire="true" abstract="true"/>
     <service id=".abstract.instanceof.App\Repository\NotificationRepository" class="App\Repository\NotificationRepository" autowire="true" autoconfigure="true" abstract="true"/>
     <service id=".instanceof.Doctrine\Bundle\DoctrineBundle\Repository\ServiceEntityRepositoryInterface.0.App\Repository\UserRepository" class="App\Repository\UserRepository" autowire="true" abstract="true"/>
@@ -4065,11 +4086,13 @@
         <argument key="authenticationUtils" type="service" id="security.authentication_utils"/>
       </argument>
     </service>
-    <service id=".service_locator.cF4bvA5" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.OxA5tA1" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
         <argument key="App\Controller\AdminController::index" type="service" id=".service_locator.a0g8Q6O"/>
         <argument key="App\Controller\DevController::index" type="service" id=".service_locator.a0g8Q6O"/>
+        <argument key="App\Controller\MessageController::index" type="service" id=".service_locator.a0g8Q6O"/>
+        <argument key="App\Controller\MessageController::read" type="service" id=".service_locator.a0g8Q6O"/>
         <argument key="App\Controller\SecurityController::login" type="service" id=".service_locator.UDgw6Ol"/>
         <argument key="App\Kernel::loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="App\Kernel::registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
@@ -4079,6 +4102,8 @@
         <argument key="kernel::terminate" type="service" id=".service_locator.KfwZsne"/>
         <argument key="App\Controller\AdminController:index" type="service" id=".service_locator.a0g8Q6O"/>
         <argument key="App\Controller\DevController:index" type="service" id=".service_locator.a0g8Q6O"/>
+        <argument key="App\Controller\MessageController:index" type="service" id=".service_locator.a0g8Q6O"/>
+        <argument key="App\Controller\MessageController:read" type="service" id=".service_locator.a0g8Q6O"/>
         <argument key="App\Controller\SecurityController:login" type="service" id=".service_locator.UDgw6Ol"/>
         <argument key="kernel:loadRoutes" type="service" id=".service_locator.KfbR3DY"/>
         <argument key="kernel:registerContainerConfiguration" type="service" id=".service_locator.KfbR3DY"/>
@@ -4153,10 +4178,10 @@
         <argument key="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber" type="service" id="doctrine.orm.listeners.pdo_cache_adapter_doctrine_schema_subscriber"/>
       </argument>
     </service>
-    <service id=".service_locator.bszTnHM" class="Symfony\Component\DependencyInjection\ServiceLocator">
+    <service id=".service_locator.epGeCkb" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator"/>
       <argument type="collection">
-        <argument key="App\Repository\MessagesRepository" type="service" id="App\Repository\MessagesRepository"/>
+        <argument key="App\Repository\MessageRepository" type="service" id="App\Repository\MessageRepository"/>
         <argument key="App\Repository\NotificationRepository" type="service" id="App\Repository\NotificationRepository"/>
         <argument key="App\Repository\UserRepository" type="service" id="App\Repository\UserRepository"/>
       </argument>
@@ -4186,6 +4211,12 @@
     <service id=".service_locator.5nX7ca3.App\Controller\DevController" class="Symfony\Component\DependencyInjection\ServiceLocator">
       <tag name="container.service_locator_context" id="App\Controller\DevController"/>
       <argument>App\Controller\DevController</argument>
+      <argument type="service" id="service_container"/>
+      <factory service=".service_locator.5nX7ca3" method="withContext"/>
+    </service>
+    <service id=".service_locator.5nX7ca3.App\Controller\MessageController" class="Symfony\Component\DependencyInjection\ServiceLocator">
+      <tag name="container.service_locator_context" id="App\Controller\MessageController"/>
+      <argument>App\Controller\MessageController</argument>
       <argument type="service" id="service_container"/>
       <factory service=".service_locator.5nX7ca3" method="withContext"/>
     </service>
@@ -4313,12 +4344,12 @@
       <argument type="service" id="security.token_storage"/>
     </service>
     <service id="debug.argument_resolver.service.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\ServiceValueResolver">
-      <argument type="service" id=".service_locator.cF4bvA5"/>
+      <argument type="service" id=".service_locator.OxA5tA1"/>
     </service>
     <service id="debug.argument_resolver.default.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\DefaultValueResolver"/>
     <service id="debug.argument_resolver.variadic.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\VariadicValueResolver"/>
     <service id="debug.argument_resolver.not_tagged_controller.inner" class="Symfony\Component\HttpKernel\Controller\ArgumentResolver\NotTaggedControllerValueResolver">
-      <argument type="service" id=".service_locator.cF4bvA5"/>
+      <argument type="service" id=".service_locator.OxA5tA1"/>
     </service>
     <service id=".errored..service_locator.KfwZsne.Symfony\Component\HttpFoundation\Response" class="Symfony\Component\HttpFoundation\Response"/>
     <service id=".errored..service_locator.KfbR3DY.Symfony\Component\Config\Loader\LoaderInterface" class="Symfony\Component\Config\Loader\LoaderInterface"/>
@@ -4681,7 +4712,7 @@
     <service id="mailer" alias="swiftmailer.mailer.default" public="true"/>
     <service id="container.env_var_processors_locator" alias=".service_locator.Kbr2i2X" public="true"/>
     <service id="twig.loader.filesystem" alias="twig.loader.native_filesystem"/>
-    <service id="argument_resolver.controller_locator" alias=".service_locator.cF4bvA5"/>
+    <service id="argument_resolver.controller_locator" alias=".service_locator.OxA5tA1"/>
     <service id="twig.loader" alias="twig.loader.native_filesystem"/>
     <service id="Psr\Log\LoggerInterface" alias="logger"/>
     <service id="event_dispatcher" alias="debug.event_dispatcher" public="true"/>

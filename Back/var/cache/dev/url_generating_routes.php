@@ -17,6 +17,8 @@ return [
     '_profiler_exception_css' => [['token'], ['_controller' => 'web_profiler.controller.exception_panel::stylesheet'], [], [['text', '/exception.css'], ['variable', '/', '[^/]++', 'token', true], ['text', '/_profiler']], [], []],
     'admin' => [[], ['_controller' => 'App\\Controller\\AdminController::index'], [], [['text', '/back/admin']], [], []],
     'dev' => [[], ['_controller' => 'App\\Controller\\DevController::index'], [], [['text', '/back/dev']], [], []],
+    'messages' => [[], ['_controller' => 'App\\Controller\\MessageController::index'], [], [['text', '/back/messages']], [], []],
+    'message_read' => [['id'], ['_controller' => 'App\\Controller\\MessageController::read'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/back/message']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
 ];

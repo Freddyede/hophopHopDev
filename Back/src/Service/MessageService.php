@@ -4,7 +4,7 @@
 namespace App\Service;
 
 // Doctrine Entity ManagerInterface Interface de gestion de données de Doctrine
-use App\Entity\Messages;
+use App\Entity\Message;
 use Doctrine\ORM\EntityManagerInterface;
 
 /**
@@ -23,7 +23,7 @@ class MessageService {
     public function __construct(EntityManagerInterface $entityManager)
     {
         // initialise $this->notifications avec l'entity Messages
-        $this->messages = $entityManager->getRepository(Messages::class);
+        $this->messages = $entityManager->getRepository(Message::class);
     }
 
     /**
@@ -31,7 +31,15 @@ class MessageService {
      * Doit retourner l'objets messages sous format de tableaux
      */
 
-    public function allMessages ($user): array {
-        return $this->messages->findByUsers($user);
+    public function allMessages ($id): array {
+        return $this->messages->findAlls($id);
+    }
+
+    /**
+     * @return array
+     * Doit retourner un objet d'un seul message
+    */
+    public function message($id){
+        return $this->messages->find($id);
     }
 }

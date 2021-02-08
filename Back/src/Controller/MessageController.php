@@ -12,20 +12,30 @@ use App\Service\MessageService;
 
 /**
  * @Route("/back")
-*/
-class DevController extends AbstractController
+ */
+class MessageController extends AbstractController
 {
     /**
-     * @Route("/dev", name="dev")
+     * @Route("/messages", name="messages")
      */
     public function index(NotificationService $ns, MessageService $ms,AuthenticationUtils $authenticationUtils): Response
     {
-        return $this->render('dev/index.html.twig', [
-            'controller_name' => 'DevController',
-            'titleDashboard'=> 'developers',
-            'title'=>'developers',
+        return $this->render('message/index.html.twig', [
+            'title' => 'Messages',
             'notifications'=>$ns->allNotifications(),
             'messages'=>$ms->allMessages($this->getDoctrine()->getRepository(User::class)->findOneBy(['email'=>$authenticationUtils->getLastUsername()])->getEmail())
+        ]);
+    }
+    /**
+     * @Route("/message/{id}", name="message_read")
+     */
+    public function read(NotificationService $ns, MessageService $ms,AuthenticationUtils $authenticationUtils, $id): Response
+    {
+        return $this->render('message/read.html.twig', [
+            'title' => 'Message',
+            'notifications'=>$ns->allNotifications(),
+            'messages'=>$ms->allMessages($this->getDoctrine()->getRepository(User::class)->findOneBy(['email'=>$authenticationUtils->getLastUsername()])->getEmail()),
+            'message'=>$ms->message($id)
         ]);
     }
 }
