@@ -3,6 +3,8 @@
 namespace App\Entity;
 
 use App\Repository\UserRepository;
+use Doctrine\Common\Collections\ArrayCollection;
+use Doctrine\Common\Collections\Collection;
 use Doctrine\ORM\Mapping as ORM;
 use Symfony\Component\Security\Core\User\UserInterface;
 
@@ -48,6 +50,28 @@ class User implements UserInterface
      * @ORM\Column(type="text", nullable=true)
      */
     private $profil;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Notification::class, mappedBy="senders")
+     */
+    private $notifications;
+
+    /**
+     * @ORM\ManyToMany(targetEntity=Messages::class, mappedBy="receveur")
+     */
+    private $messages;
+
+    /**
+     * @ORM\ManyToOne(targetEntity=Messages::class, inversedBy="envoyeur")
+     */
+    private $envoyeur;
+
+    public function __construct()
+    {
+        $this->notifications = new ArrayCollection();
+        $this->mails = new ArrayCollection();
+        $this->messages = new ArrayCollection();
+    }
 
     public function getId(): ?int
     {
@@ -159,6 +183,63 @@ class User implements UserInterface
     public function setProfil(?string $profil): self
     {
         $this->profil = $profil;
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Notification[]
+     */
+    public function getNotifications(): Collection
+    {
+        return $this->notifications;
+    }
+
+    public function addNotification(Notification $notification): self
+    {
+        if (!$this->notifications->contains($notification)) {
+            $this->notifications[] = $notification;
+            $notification->addSender($this);
+        }
+
+        return $this;
+    }
+
+    public function removeNotification(Notification $notification): self
+    {
+        if ($this->notifications->removeElement($notification)) {
+            $notification->removeSender($this);
+        }
+
+        return $this;
+    }
+
+    /**
+     * @return Collection|Messages[]
+     */
+    public function getMessages(): Collection
+    {
+        return $this->messages;
+    }
+
+    public function addMessage(Messages $message): self
+    {
+        if (!$this->messages->contains($message)) {
+            $this->messages[] = $message;
+            $message->addReceveur($this);
+        }
+
+        return $this;
+    }
+
+    public function getEnvoyeur(): ?Messages
+    {
+        return $this->envoyeur;
+    }
+
+    public function setEnvoyeur(?Messages $envoyeur): self
+    {
+        $this->envoyeur = $envoyeur;
 
         return $this;
     }
