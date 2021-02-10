@@ -18,6 +18,7 @@ return [
         '/back/messages' => [[['_route' => 'messages', '_controller' => 'App\\Controller\\MessageController::index'], null, null, null, false, false, null]],
         '/login' => [[['_route' => 'app_login', '_controller' => 'App\\Controller\\SecurityController::login'], null, null, null, false, false, null]],
         '/logout' => [[['_route' => 'app_logout', '_controller' => 'App\\Controller\\SecurityController::logout'], null, null, null, false, false, null]],
+        '/settings' => [[['_route' => 'settings', '_controller' => 'App\\Controller\\SettingsController::index'], null, null, null, false, false, null]],
     ],
     [ // $regexpList
         0 => '{^(?'
