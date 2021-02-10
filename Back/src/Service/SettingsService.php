@@ -1,48 +1,37 @@
 <?php
 
-// Url du dossier de service
 namespace App\Service;
 
-// Entité de Message
-use App\Entity\Message;
+// Entité de Settings
+use App\Entity\Settings;
 // Doctrine Entity ManagerInterface Interface de gestion de données de Doctrine
 use Doctrine\ORM\EntityManagerInterface;
 
+
 /**
- * MessageService :
+ * SettingsService :
  * Objectifs :
-    * Afficher tous les messages
+    * Retourner tous les paramètres aux controllers
  * Obstacles mineurs :
     * Services Doctrine
     * Manager Doctrine
 */
-
-class MessageService {
-    public $messages;
+class SettingsService {
+    public $settings;
 
     // Instancie l'objet EntityManagerInterface dans le constructeur
     public function __construct(EntityManagerInterface $entityManager)
     {
         // initialise $this->notifications avec l'entity Messages
-        $this->messages = $entityManager->getRepository(Message::class);
+        $this->settings = $entityManager->getRepository(Settings::class);
     }
 
     /**
      * @return array
-     * @param id
+     * @param email
      * Doit retourner l'objets messages sous format de tableaux
      */
-
-    public function allMessages ($id): array {
-        return $this->messages->findAlls($id);
-    }
-
-    /**
-     * @return array
-     * @param id
-     * Doit retourner un objet d'un seul message
-    */
-    public function message($id){
-        return $this->messages->find($id);
+    public function returnSettings($email) {
+        return $this->settings->findOneBy(['user'=>$email]);
     }
 }
