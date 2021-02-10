@@ -1,5 +1,5 @@
 <!-- Sidebar -->
-<ul class="navbar-nav bg-gradient-primary sidebar sidebar-dark accordion" id="accordionSidebar">
+<ul class="navbar-nav bg-danger sidebar sidebar-dark accordion" id="accordionSidebar">
     <!-- Sidebar - Brand -->
     <a class="sidebar-brand d-flex align-items-center justify-content-center" 
     href="{% if app.user.roles.roles is same as('admin') %}
@@ -8,10 +8,10 @@
             {{ path('dev') }}
         {% endif %}">
         <div class="sidebar-brand-icon rotate-n-15">
-            <i class="fas fa-laugh-wink"></i>
+            <img src="{{ asset('img/favicons/favicon.png') }}" class="rounded-circle" style="width:90%;"/>
         </div>
         <div class="sidebar-brand-text mx-3">
-            SB Admin <sup>2</sup>
+            Back Office
         </div>
     </a>
     <!-- Divider -->
@@ -117,7 +117,7 @@
                 <a class="collapse-item text-center" href="#">Salaire</a>
                 <a class="collapse-item text-center" href="#">Utilisateurs</a>
                 <div class="collapse-divider"></div>
-                <h6 class="collapse-header text-center">Graphe erreur :</h6>
+                <h6 class="collapse-header text-center">Graphes erreur :</h6>
                 <a class="collapse-item text-center" href="#">Erreurs site web</a>
                 <a class="collapse-item text-center" href="#">Erreurs application mobile</a>
             </div>

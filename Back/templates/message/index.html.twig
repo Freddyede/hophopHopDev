@@ -1,28 +1,60 @@
 {% extends 'BASES/base.admin.html.twig' %}
 
 {% block body %}
-    <h1>Boîte de réception</h1>
+    <div class="row">
+        <div class="col-11 offset-1 mb-5 mt-2">
+            <h1>Boîte de réception</h1>
+        </div>
+    </div>
     <div class="row">
         {% for message in messages %}
-            <div class="col-12 col-lg-4 col-md-12 offset-md-1">
-                <div class="card">
+            <div class="col-12 col-lg-4 offset-lg-1 col-md-12">
+                <div class="card mb-5">
                     <div class="card-header">
                         <div class="row">
-                            <div class="col-lg-11 col-12">
+                            <div class="col-lg-8 col-12">
                                 {{ message.senders.email }}
                             </div>
-                            <div class="d-none d-sm-none d-md-none col-md-1 d-lg-block d-xl-block">
-                                <i class="fas fa-eye"></i>
+                            <div class="d-none d-sm-none d-md-none 
+                                col-md-1 col-lg-4 d-lg-block d-xl-block">
+                                <div class="row">
+                                    <div class="col-lg-4">
+                                        <a href="{{ path('message_read', {id:message.id}) }}" 
+                                            class="text-dark">
+                                            <i class="fas fa-eye"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <a href="#" class="text-dark">
+                                            <i class="fas fa-reply"></i>
+                                        </a>
+                                    </div>
+                                    <div class="col-lg-4">
+                                        <a href="#" class="text-dark">
+                                            <i class="fas fa-trash-alt"></i>
+                                        </a>
+                                    </div>
+                                </div>
                             </div>
                         </div>
                     </div>
-                    <div class="card-body">
-                        <h5 class="card-title">{{ message.receveur.email }}</h5>
+                    <div class="card-body bg-dark text-white">
+                        <h5 class="card-title">{{ message.title }}</h5>
                         <p class="card-text">{{ message.contenu }}</p>
                         <p class="card-text small"> Sending at {{ message.createdAt|date('d-m-y h:m') }}</p>
                         <div class="row">
-                            <a href="#" class="btn btn-success col-6 col-md-6 col-lg-4 offset-md-1">Répondre</a>
-                            <a href="#" class="btn btn-danger col-6 col-md-6 col-lg-4 offset-md-1">Supprimer</a>
+                            <div class="d-block d-sm-block d-md-block d-lg-none 
+                                col-12 mb-2 text-center col-md-4 col-lg-4">
+                                <a class="btn btn-success">Répondre</a>
+                            </div>
+                            <div class="d-block d-sm-block d-md-block d-lg-none 
+                                col-12 mb-2 text-center col-md-4 col-lg-4">
+                                <a class="btn btn-info">Lire</a>
+                            </div>
+                            <div class="d-block d-sm-block d-md-block d-lg-none 
+                                col-12 mb-2 text-center col-md-4 col-lg-4">
+                                <a class="btn btn-danger">Supprimer</a>
+                            </div>
                         </div>
                     </div>
                 </div>
