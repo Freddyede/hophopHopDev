@@ -6,6 +6,7 @@ use Symfony\Bundle\FrameworkBundle\Controller\AbstractController;
 use Symfony\Component\HttpFoundation\Response;
 use Symfony\Component\Routing\Annotation\Route;
 use App\Entity\User;
+use App\Entity\Message;
 use Symfony\Component\Security\Http\Authentication\AuthenticationUtils;
 use App\Service\NotificationService;
 use App\Service\MessageService;
@@ -37,5 +38,22 @@ class MessageController extends AbstractController
             'messages'=>$ms->allMessages($this->getDoctrine()->getRepository(User::class)->findOneBy(['email'=>$authenticationUtils->getLastUsername()])->getEmail()),
             'message'=>$ms->message($id)
         ]);
+    }
+
+    /**
+     * @Route("/delete/message/{id}", name="message_delete")
+     */
+    public function delete(NotificationService $ns, MessageService $ms,AuthenticationUtils $authenticationUtils, $id): Response
+    {
+        $ms->delete($this->getDoctrine()->getRepository(Message::class)->find($id));
+        return $this->redirectToRoute("messages");
+    }
+
+    /**
+     * @Route("/message/create", name="message_create")
+    */
+
+    public function create() {
+        return $this->render('message/create.html.twig');   
     }
 }

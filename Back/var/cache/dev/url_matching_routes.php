@@ -36,7 +36,13 @@ return [
                         .'|(*:159)'
                     .')'
                 .')'
-                .'|/back/message/([^/]++)(*:191)'
+                .'|/back/(?'
+                    .'|message/(?'
+                        .'|([^/]++)(*:197)'
+                        .'|create(*:211)'
+                    .')'
+                    .'|delete/message/([^/]++)(*:243)'
+                .')'
             .')/?$}sDu',
     ],
     [ // $dynamicRoutes
@@ -47,8 +53,10 @@ return [
         136 => [[['_route' => '_profiler_exception', '_controller' => 'web_profiler.controller.exception_panel::body'], ['token'], null, null, false, false, null]],
         149 => [[['_route' => '_profiler_exception_css', '_controller' => 'web_profiler.controller.exception_panel::stylesheet'], ['token'], null, null, false, false, null]],
         159 => [[['_route' => '_profiler', '_controller' => 'web_profiler.controller.profiler::panelAction'], ['token'], null, null, false, true, null]],
-        191 => [
-            [['_route' => 'message_read', '_controller' => 'App\\Controller\\MessageController::read'], ['id'], null, null, false, true, null],
+        197 => [[['_route' => 'message_read', '_controller' => 'App\\Controller\\MessageController::read'], ['id'], null, null, false, true, null]],
+        211 => [[['_route' => 'message_create', '_controller' => 'App\\Controller\\MessageController::create'], [], null, null, false, false, null]],
+        243 => [
+            [['_route' => 'message_delete', '_controller' => 'App\\Controller\\MessageController::delete'], ['id'], null, null, false, true, null],
             [null, null, null, null, false, false, 0],
         ],
     ],

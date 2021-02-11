@@ -26,16 +26,12 @@
                 {% include 'components/topbar.html.twig' %}
                 <!-- Main Content -->
                 <div id="content">
-                    
-                    {% block body %}
-                    {% endblock %}
+                    {% block body %}{% endblock %}
                 </div>
                 <!-- End of Main Content -->
                 {% include 'components/footer.html.twig' %}
-
             </div>
             <!-- End of Content Wrapper -->
-
         </div>
         <!-- End of Page Wrapper -->
 
@@ -43,7 +39,6 @@
         <a class="scroll-to-top rounded" href="#page-top">
             <i class="fas fa-angle-up"></i>
         </a>
-
         <!-- Logout Modal-->
         <div class="modal fade" id="logoutModal" tabindex="-1" role="dialog" aria-labelledby="exampleModalLabel"
             aria-hidden="true">
@@ -66,20 +61,16 @@
             <!-- Bootstrap core JavaScript-->
             <script src="{{asset('vendor/jquery/jquery.min.js')}}"></script>
             <script src="{{asset('vendor/bootstrap/js/bootstrap.bundle.min.js')}}"></script>
-
             <!-- Core plugin JavaScript-->
             <script src="{{asset('vendor/jquery-easing/jquery.easing.min.js')}}"></script>
-
             <!-- Custom scripts for all pages-->
             <script src="{{asset('js/sb-admin-2.min.js')}}"></script>
         {% block js %}
             <!-- Page level plugins -->
             <script src="{{asset('vendor/chart.js/Chart.js')}}"></script>
-
             <!-- Page level custom scripts -->
             <script src="{{asset('js/demo/chart-area-demo.js')}}"></script>
             <script src="{{asset('js/demo/chart-pie-demo.js')}}"></script>
         {% endblock %}
     </body>
-
 </html>

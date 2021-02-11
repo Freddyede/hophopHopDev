@@ -30,7 +30,7 @@
                                         </a>
                                     </div>
                                     <div class="col-lg-4">
-                                        <a href="#" class="text-dark">
+                                        <a href="{{ path('message_delete',{id:message.id}) }}" class="text-dark">
                                             <i class="fas fa-trash-alt"></i>
                                         </a>
                                     </div>
@@ -39,9 +39,7 @@
                         </div>
                     </div>
                     <div class="card-body bg-dark text-white">
-                        <h5 class="card-title">{{ message.title }}</h5>
-                        <p class="card-text">{{ message.contenu }}</p>
-                        <p class="card-text small"> Sending at {{ message.createdAt|date('d-m-y h:m') }}</p>
+                        <p class="card-text small">Envoyé le : {{ message.createdAt|date('d-m-y à h:m') }}</p>
                         <div class="row">
                             <div class="d-block d-sm-block d-md-block d-lg-none 
                                 col-12 mb-2 text-center col-md-4 col-lg-4">
@@ -53,7 +51,7 @@
                             </div>
                             <div class="d-block d-sm-block d-md-block d-lg-none 
                                 col-12 mb-2 text-center col-md-4 col-lg-4">
-                                <a class="btn btn-danger">Supprimer</a>
+                                <a class="btn btn-danger" href="{{ path('message_delete',{id:message.id}) }}">Supprimer</a>
                             </div>
                         </div>
                     </div>
@@ -62,6 +60,4 @@
         {% endfor %}
     </div>
 {% endblock %}
-{% block js %}
-
-{% endblock %}
+{% block js %}{% endblock %}

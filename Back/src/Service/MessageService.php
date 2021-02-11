@@ -19,10 +19,12 @@ use Doctrine\ORM\EntityManagerInterface;
 
 class MessageService {
     public $messages;
-
+    private $em;
     // Instancie l'objet EntityManagerInterface dans le constructeur
     public function __construct(EntityManagerInterface $entityManager)
     {
+        // initialise $this->em avec l'entityManager
+        $this->em = $entityManager;
         // initialise $this->notifications avec l'entity Messages
         $this->messages = $entityManager->getRepository(Message::class);
     }
@@ -44,5 +46,14 @@ class MessageService {
     */
     public function message($id){
         return $this->messages->find($id);
+    }
+
+    /**
+     * @return object
+     * @param id
+    */
+    public function delete($id){
+        $this->em->remove($id);
+        return $this->em->flush();
     }
 }

@@ -19,6 +19,8 @@ return [
     'dev' => [[], ['_controller' => 'App\\Controller\\DevController::index'], [], [['text', '/back/dev']], [], []],
     'messages' => [[], ['_controller' => 'App\\Controller\\MessageController::index'], [], [['text', '/back/messages']], [], []],
     'message_read' => [['id'], ['_controller' => 'App\\Controller\\MessageController::read'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/back/message']], [], []],
+    'message_delete' => [['id'], ['_controller' => 'App\\Controller\\MessageController::delete'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/back/delete/message']], [], []],
+    'message_create' => [[], ['_controller' => 'App\\Controller\\MessageController::create'], [], [['text', '/back/message/create']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
 ];
