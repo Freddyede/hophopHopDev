@@ -21,5 +21,4 @@ return [
     'message_read' => [['id'], ['_controller' => 'App\\Controller\\MessageController::read'], [], [['variable', '/', '[^/]++', 'id', true], ['text', '/back/message']], [], []],
     'app_login' => [[], ['_controller' => 'App\\Controller\\SecurityController::login'], [], [['text', '/login']], [], []],
     'app_logout' => [[], ['_controller' => 'App\\Controller\\SecurityController::logout'], [], [['text', '/logout']], [], []],
-    'settings' => [[], ['_controller' => 'App\\Controller\\SettingsController::index'], [], [['text', '/settings']], [], []],
 ];
